@@ -35,6 +35,8 @@
 		1762D9BF2A0CE58500946464 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9BE2A0CE58500946464 /* FirebaseFirestoreSwift */; };
 		1762D9C12A0CE5A000946464 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1762D9C02A0CE59B00946464 /* GoogleService-Info.plist */; };
 		1762D9C52A0CEA6300946464 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9C42A0CEA6300946464 /* SDWebImage */; };
+		1762D9C82A0D033800946464 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1762D9C72A0D033800946464 /* AuthService.swift */; };
+		1762D9CB2A0D047000946464 /* BookmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1762D9CA2A0D047000946464 /* BookmarkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		1762D9AF2A0CE1E500946464 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		1762D9B02A0CE1E500946464 /* BookmarksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarksViewController.xib; sourceTree = "<group>"; };
 		1762D9C02A0CE59B00946464 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1762D9C72A0D033800946464 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		1762D9CA2A0D047000946464 /* BookmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,8 @@
 		1713A6312A0BDB090088A9EE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				1762D9C92A0D045C00946464 /* BookmarkService */,
+				1762D9C62A0D032500946464 /* AuthService */,
 				1713A63A2A0BE8890088A9EE /* NewsService */,
 				1713A6322A0BDB130088A9EE /* Network */,
 			);
@@ -211,6 +217,22 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1762D9C62A0D032500946464 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				1762D9C72A0D033800946464 /* AuthService.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		1762D9C92A0D045C00946464 /* BookmarkService */ = {
+			isa = PBXGroup;
+			children = (
+				1762D9CA2A0D047000946464 /* BookmarkService.swift */,
+			);
+			path = BookmarkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +336,8 @@
 				1713A6272A0BD8650088A9EE /* ProfileViewController.swift in Sources */,
 				1713A6392A0BE6EA0088A9EE /* ArticleDTO.swift in Sources */,
 				1713A62E2A0BD8A20088A9EE /* ProfileCoordinator.swift in Sources */,
+				1762D9C82A0D033800946464 /* AuthService.swift in Sources */,
+				1762D9CB2A0D047000946464 /* BookmarkService.swift in Sources */,
 				1713A6342A0BDB920088A9EE /* NetworkService.swift in Sources */,
 				1713A61B2A0BB5970088A9EE /* MainViewController.swift in Sources */,
 			);

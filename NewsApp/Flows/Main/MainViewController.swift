@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         newsService.fetchNews { data in
-            print("look this")
+            print("look this \(data.articles.count)")
         }
     }
 }
