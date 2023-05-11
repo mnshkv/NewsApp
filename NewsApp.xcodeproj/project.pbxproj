@@ -13,7 +13,6 @@
 		1713A60F2A0BB4E40088A9EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1713A60D2A0BB4E40088A9EE /* LaunchScreen.storyboard */; };
 		1713A6182A0BB52D0088A9EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713A6172A0BB52D0088A9EE /* Coordinator.swift */; };
 		1713A61B2A0BB5970088A9EE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713A61A2A0BB5970088A9EE /* MainViewController.swift */; };
-		1713A61F2A0BCB800088A9EE /* BookMarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713A61E2A0BCB800088A9EE /* BookMarksViewController.swift */; };
 		1713A6212A0BD4D50088A9EE /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713A6202A0BD4D50088A9EE /* MainCoordinator.swift */; };
 		1713A6232A0BD62A0088A9EE /* BookmarkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713A6222A0BD62A0088A9EE /* BookmarkCoordinator.swift */; };
 		1713A6272A0BD8650088A9EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713A6262A0BD8650088A9EE /* ProfileViewController.swift */; };
@@ -25,6 +24,16 @@
 		1713A6372A0BE69D0088A9EE /* NewsApiResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713A6362A0BE69D0088A9EE /* NewsApiResponseDTO.swift */; };
 		1713A6392A0BE6EA0088A9EE /* ArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713A6382A0BE6EA0088A9EE /* ArticleDTO.swift */; };
 		1713A63C2A0BE8980088A9EE /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1713A63B2A0BE8980088A9EE /* NewsService.swift */; };
+		1762D9AE2A0CE13C00946464 /* BookmarkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1762D9AD2A0CE13C00946464 /* BookmarkDTO.swift */; };
+		1762D9B12A0CE1E500946464 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1762D9AF2A0CE1E500946464 /* BookmarksViewController.swift */; };
+		1762D9B22A0CE1E500946464 /* BookmarksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1762D9B02A0CE1E500946464 /* BookmarksViewController.xib */; };
+		1762D9B52A0CE58500946464 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9B42A0CE58500946464 /* FirebaseAnalytics */; };
+		1762D9B72A0CE58500946464 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9B62A0CE58500946464 /* FirebaseAnalyticsSwift */; };
+		1762D9B92A0CE58500946464 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9B82A0CE58500946464 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		1762D9BB2A0CE58500946464 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9BA2A0CE58500946464 /* FirebaseAuth */; };
+		1762D9BD2A0CE58500946464 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9BC2A0CE58500946464 /* FirebaseFirestore */; };
+		1762D9BF2A0CE58500946464 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9BE2A0CE58500946464 /* FirebaseFirestoreSwift */; };
+		1762D9C12A0CE5A000946464 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1762D9C02A0CE59B00946464 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +45,6 @@
 		1713A6102A0BB4E40088A9EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1713A6172A0BB52D0088A9EE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		1713A61A2A0BB5970088A9EE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		1713A61E2A0BCB800088A9EE /* BookMarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarksViewController.swift; sourceTree = "<group>"; };
 		1713A6202A0BD4D50088A9EE /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		1713A6222A0BD62A0088A9EE /* BookmarkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCoordinator.swift; sourceTree = "<group>"; };
 		1713A6262A0BD8650088A9EE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,10 @@
 		1713A6362A0BE69D0088A9EE /* NewsApiResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiResponseDTO.swift; sourceTree = "<group>"; };
 		1713A6382A0BE6EA0088A9EE /* ArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDTO.swift; sourceTree = "<group>"; };
 		1713A63B2A0BE8980088A9EE /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		1762D9AD2A0CE13C00946464 /* BookmarkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkDTO.swift; sourceTree = "<group>"; };
+		1762D9AF2A0CE1E500946464 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		1762D9B02A0CE1E500946464 /* BookmarksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarksViewController.xib; sourceTree = "<group>"; };
+		1762D9C02A0CE59B00946464 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +66,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1762D9B72A0CE58500946464 /* FirebaseAnalyticsSwift in Frameworks */,
+				1762D9BB2A0CE58500946464 /* FirebaseAuth in Frameworks */,
+				1762D9B52A0CE58500946464 /* FirebaseAnalytics in Frameworks */,
+				1762D9BF2A0CE58500946464 /* FirebaseFirestoreSwift in Frameworks */,
 				1713A62C2A0BD8870088A9EE /* SnapKit in Frameworks */,
+				1762D9B92A0CE58500946464 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				1762D9BD2A0CE58500946464 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +104,7 @@
 				1713A6162A0BB51F0088A9EE /* Utils */,
 				1713A6022A0BB4E10088A9EE /* AppDelegate.swift */,
 				1713A6042A0BB4E10088A9EE /* SceneDelegate.swift */,
+				1762D9C02A0CE59B00946464 /* GoogleService-Info.plist */,
 				1713A60B2A0BB4E40088A9EE /* Assets.xcassets */,
 				1713A60D2A0BB4E40088A9EE /* LaunchScreen.storyboard */,
 				1713A6102A0BB4E40088A9EE /* Info.plist */,
@@ -124,8 +143,9 @@
 		1713A61D2A0BCB650088A9EE /* Bookmarks */ = {
 			isa = PBXGroup;
 			children = (
-				1713A61E2A0BCB800088A9EE /* BookMarksViewController.swift */,
 				1713A6222A0BD62A0088A9EE /* BookmarkCoordinator.swift */,
+				1762D9AF2A0CE1E500946464 /* BookmarksViewController.swift */,
+				1762D9B02A0CE1E500946464 /* BookmarksViewController.xib */,
 			);
 			path = Bookmarks;
 			sourceTree = "<group>";
@@ -170,6 +190,7 @@
 			children = (
 				1713A6362A0BE69D0088A9EE /* NewsApiResponseDTO.swift */,
 				1713A6382A0BE6EA0088A9EE /* ArticleDTO.swift */,
+				1762D9AD2A0CE13C00946464 /* BookmarkDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -200,6 +221,12 @@
 			name = NewsApp;
 			packageProductDependencies = (
 				1713A62B2A0BD8870088A9EE /* SnapKit */,
+				1762D9B42A0CE58500946464 /* FirebaseAnalytics */,
+				1762D9B62A0CE58500946464 /* FirebaseAnalyticsSwift */,
+				1762D9B82A0CE58500946464 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				1762D9BA2A0CE58500946464 /* FirebaseAuth */,
+				1762D9BC2A0CE58500946464 /* FirebaseFirestore */,
+				1762D9BE2A0CE58500946464 /* FirebaseFirestoreSwift */,
 			);
 			productName = NewsApp;
 			productReference = 1713A5FF2A0BB4E10088A9EE /* NewsApp.app */;
@@ -231,6 +258,7 @@
 			mainGroup = 1713A5F62A0BB4E10088A9EE;
 			packageReferences = (
 				1713A62A2A0BD8870088A9EE /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1762D9B32A0CE58500946464 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 1713A6002A0BB4E10088A9EE /* Products */;
 			projectDirPath = "";
@@ -248,6 +276,8 @@
 			files = (
 				1713A60F2A0BB4E40088A9EE /* LaunchScreen.storyboard in Resources */,
 				1713A60C2A0BB4E40088A9EE /* Assets.xcassets in Resources */,
+				1762D9B22A0CE1E500946464 /* BookmarksViewController.xib in Resources */,
+				1762D9C12A0CE5A000946464 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,15 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1762D9B12A0CE1E500946464 /* BookmarksViewController.swift in Sources */,
 				1713A63C2A0BE8980088A9EE /* NewsService.swift in Sources */,
 				1713A6182A0BB52D0088A9EE /* Coordinator.swift in Sources */,
 				1713A6212A0BD4D50088A9EE /* MainCoordinator.swift in Sources */,
 				1713A6292A0BD8710088A9EE /* CategoriesViewController.swift in Sources */,
-				1713A61F2A0BCB800088A9EE /* BookMarksViewController.swift in Sources */,
 				1713A6372A0BE69D0088A9EE /* NewsApiResponseDTO.swift in Sources */,
 				1713A6302A0BD8AF0088A9EE /* CategoriesCoordinator.swift in Sources */,
 				1713A6232A0BD62A0088A9EE /* BookmarkCoordinator.swift in Sources */,
 				1713A6032A0BB4E10088A9EE /* AppDelegate.swift in Sources */,
+				1762D9AE2A0CE13C00946464 /* BookmarkDTO.swift in Sources */,
 				1713A6052A0BB4E10088A9EE /* SceneDelegate.swift in Sources */,
 				1713A6272A0BD8650088A9EE /* ProfileViewController.swift in Sources */,
 				1713A6392A0BE6EA0088A9EE /* ArticleDTO.swift in Sources */,
@@ -498,6 +529,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		1762D9B32A0CE58500946464 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -505,6 +544,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1713A62A2A0BD8870088A9EE /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		1762D9B42A0CE58500946464 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1762D9B32A0CE58500946464 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		1762D9B62A0CE58500946464 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1762D9B32A0CE58500946464 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		1762D9B82A0CE58500946464 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1762D9B32A0CE58500946464 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		1762D9BA2A0CE58500946464 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1762D9B32A0CE58500946464 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		1762D9BC2A0CE58500946464 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1762D9B32A0CE58500946464 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1762D9BE2A0CE58500946464 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1762D9B32A0CE58500946464 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

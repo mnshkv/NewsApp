@@ -19,7 +19,7 @@ protocol Coordinator {
 
 extension Coordinator {
     func push(_ path: Screens) {
-//        navigationController.pushViewController(path.controller, animated: true)
+        navigationController.pushViewController(path.controller, animated: true)
     }
             
     func pop() {
@@ -30,21 +30,29 @@ extension Coordinator {
 enum Screens {
     case Main
     case Bookmarks
+    
+    var controller: UIViewController {
+        switch self {
+        case .Main:
+            return MainViewController()
+        case .Bookmarks:
+            return BookmarksViewController()
+        }
+    }
 }
 
 class AppCoordinator {
     public static let shared = AppCoordinator()
 
-//    var navigationController: UINavigationController = UINavigationController()
+    public let main = MainCoordinator()
+    public let bookmarks = BookmarkCoordinator()
+    public let categories = CategoriesCoordinator()
+    public let profile = ProfileCoordinator()
+
     var tabController: UITabBarController = UITabBarController()
     
     
     func start() {
-        let main = MainCoordinator()
-        let bookmarks = BookmarkCoordinator()
-        let categories = CategoriesCoordinator()
-        let profile = ProfileCoordinator()
-        
         tabController.viewControllers = [
             main.navigationController,
             categories.navigationController,
@@ -52,9 +60,5 @@ class AppCoordinator {
             profile.navigationController
         ]
         tabController.tabBar.backgroundColor = .systemBackground
-    }
-    
-    func popToRoot() {
-//        navigationController.popToRootViewController(animated: true)
     }
 }

@@ -14,7 +14,6 @@ class NewsService {
         let urlComponets = NetworkService.configurate(path: path, params: ["q": "bitcoin"])
         NetworkService.makeRequest(url: urlComponets) { data in
             let dto = try! JSONDecoder().decode(NewsApiResponseDTO.self, from: data)
-            print("count \(dto.totalResults)")
             handler(dto)
         }
     }
@@ -23,7 +22,6 @@ class NewsService {
         let urlComponets = NetworkService.configurate(path: path, params: ["q": "bitcoin"])
         NetworkService.makeRequest(url: urlComponets) { data in
             let dto = try! JSONDecoder().decode(NewsApiResponseDTO.self, from: data)
-            print("count \(dto.totalResults)")
             handler(dto)
         }
     }

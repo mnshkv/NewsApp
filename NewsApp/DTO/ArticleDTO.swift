@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct ArticleDTO: Decodable {
+struct ArticleDTO: Codable {
+    let id: String = UUID().uuidString
     let author: String?
     let title: String
     let description: String
