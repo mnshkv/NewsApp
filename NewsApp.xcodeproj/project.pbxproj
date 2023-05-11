@@ -34,6 +34,7 @@
 		1762D9BD2A0CE58500946464 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9BC2A0CE58500946464 /* FirebaseFirestore */; };
 		1762D9BF2A0CE58500946464 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9BE2A0CE58500946464 /* FirebaseFirestoreSwift */; };
 		1762D9C12A0CE5A000946464 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1762D9C02A0CE59B00946464 /* GoogleService-Info.plist */; };
+		1762D9C52A0CEA6300946464 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9C42A0CEA6300946464 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 			files = (
 				1762D9B72A0CE58500946464 /* FirebaseAnalyticsSwift in Frameworks */,
 				1762D9BB2A0CE58500946464 /* FirebaseAuth in Frameworks */,
+				1762D9C52A0CEA6300946464 /* SDWebImage in Frameworks */,
 				1762D9B52A0CE58500946464 /* FirebaseAnalytics in Frameworks */,
 				1762D9BF2A0CE58500946464 /* FirebaseFirestoreSwift in Frameworks */,
 				1713A62C2A0BD8870088A9EE /* SnapKit in Frameworks */,
@@ -143,6 +145,7 @@
 		1713A61D2A0BCB650088A9EE /* Bookmarks */ = {
 			isa = PBXGroup;
 			children = (
+				1762D9C22A0CE98D00946464 /* Views */,
 				1713A6222A0BD62A0088A9EE /* BookmarkCoordinator.swift */,
 				1762D9AF2A0CE1E500946464 /* BookmarksViewController.swift */,
 				1762D9B02A0CE1E500946464 /* BookmarksViewController.xib */,
@@ -203,6 +206,13 @@
 			path = NewsService;
 			sourceTree = "<group>";
 		};
+		1762D9C22A0CE98D00946464 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,6 +237,7 @@
 				1762D9BA2A0CE58500946464 /* FirebaseAuth */,
 				1762D9BC2A0CE58500946464 /* FirebaseFirestore */,
 				1762D9BE2A0CE58500946464 /* FirebaseFirestoreSwift */,
+				1762D9C42A0CEA6300946464 /* SDWebImage */,
 			);
 			productName = NewsApp;
 			productReference = 1713A5FF2A0BB4E10088A9EE /* NewsApp.app */;
@@ -259,6 +270,7 @@
 			packageReferences = (
 				1713A62A2A0BD8870088A9EE /* XCRemoteSwiftPackageReference "SnapKit" */,
 				1762D9B32A0CE58500946464 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1762D9C32A0CEA6300946464 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 1713A6002A0BB4E10088A9EE /* Products */;
 			projectDirPath = "";
@@ -537,6 +549,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		1762D9C32A0CEA6300946464 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -574,6 +594,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1762D9B32A0CE58500946464 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		1762D9C42A0CEA6300946464 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1762D9C32A0CEA6300946464 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
