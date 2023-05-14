@@ -37,6 +37,10 @@
 		1762D9C52A0CEA6300946464 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9C42A0CEA6300946464 /* SDWebImage */; };
 		1762D9C82A0D033800946464 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1762D9C72A0D033800946464 /* AuthService.swift */; };
 		1762D9CB2A0D047000946464 /* BookmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1762D9CA2A0D047000946464 /* BookmarkService.swift */; };
+		8E47A7982A0DFA53008006F4 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7972A0DFA53008006F4 /* OnBoardingViewController.swift */; };
+		8E47A79B2A0DFA77008006F4 /* OnBoardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A79A2A0DFA77008006F4 /* OnBoardingPage.swift */; };
+		8E47A79D2A0DFAD4008006F4 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A79C2A0DFAD4008006F4 /* OnBoardingView.swift */; };
+		8E47A79F2A0DFF00008006F4 /* InteractivePageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A79E2A0DFF00008006F4 /* InteractivePageIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		1762D9C02A0CE59B00946464 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1762D9C72A0D033800946464 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		1762D9CA2A0D047000946464 /* BookmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkService.swift; sourceTree = "<group>"; };
+		8E47A7972A0DFA53008006F4 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		8E47A79A2A0DFA77008006F4 /* OnBoardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPage.swift; sourceTree = "<group>"; };
+		8E47A79C2A0DFAD4008006F4 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		8E47A79E2A0DFF00008006F4 /* InteractivePageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractivePageIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,7 @@
 		1713A6192A0BB5770088A9EE /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				8E47A7962A0DFA36008006F4 /* OnBoarding */,
 				1713A6252A0BD8250088A9EE /* Categories */,
 				1713A6242A0BD81E0088A9EE /* Profile */,
 				1713A61D2A0BCB650088A9EE /* Bookmarks */,
@@ -235,6 +244,25 @@
 			path = BookmarkService;
 			sourceTree = "<group>";
 		};
+		8E47A7962A0DFA36008006F4 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				8E47A7992A0DFA65008006F4 /* View */,
+				8E47A7972A0DFA53008006F4 /* OnBoardingViewController.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		8E47A7992A0DFA65008006F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E47A79A2A0DFA77008006F4 /* OnBoardingPage.swift */,
+				8E47A79C2A0DFAD4008006F4 /* OnBoardingView.swift */,
+				8E47A79E2A0DFF00008006F4 /* InteractivePageIndicator.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,10 +353,14 @@
 				1762D9B12A0CE1E500946464 /* BookmarksViewController.swift in Sources */,
 				1713A63C2A0BE8980088A9EE /* NewsService.swift in Sources */,
 				1713A6182A0BB52D0088A9EE /* Coordinator.swift in Sources */,
+				8E47A79B2A0DFA77008006F4 /* OnBoardingPage.swift in Sources */,
 				1713A6212A0BD4D50088A9EE /* MainCoordinator.swift in Sources */,
+				8E47A79F2A0DFF00008006F4 /* InteractivePageIndicator.swift in Sources */,
+				8E47A7982A0DFA53008006F4 /* OnBoardingViewController.swift in Sources */,
 				1713A6292A0BD8710088A9EE /* CategoriesViewController.swift in Sources */,
 				1713A6372A0BE69D0088A9EE /* NewsApiResponseDTO.swift in Sources */,
 				1713A6302A0BD8AF0088A9EE /* CategoriesCoordinator.swift in Sources */,
+				8E47A79D2A0DFAD4008006F4 /* OnBoardingView.swift in Sources */,
 				1713A6232A0BD62A0088A9EE /* BookmarkCoordinator.swift in Sources */,
 				1713A6032A0BB4E10088A9EE /* AppDelegate.swift in Sources */,
 				1762D9AE2A0CE13C00946464 /* BookmarkDTO.swift in Sources */,
