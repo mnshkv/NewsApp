@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 
-
 class OnBoardingPageView: UIView {
     lazy var pageCards: UIImageView = {
         let imageView = UIImageView()
@@ -59,14 +58,12 @@ class OnBoardingPageView: UIView {
         addSubview(pageCards)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
-
         pageCards.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(0)
             make.width.equalTo(288)
             make.height.equalTo(336)
             make.centerX.equalToSuperview()
         }
-
         titleLabel.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(16)
             make.top.equalTo(pageCards.snp.bottom).inset(-82)

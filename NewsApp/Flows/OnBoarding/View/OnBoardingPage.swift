@@ -13,21 +13,20 @@ struct OnBoardingPage {
 
     static let about: Self = .init(
         cardName: "firstCard",
-        title: "Watch your favorite movie easily",
-        subtitle: "Popular movies from all over the world in your app."
+        title: "First to know",
+        subtitle: "All news in one place, be the first to know last news."
     )
 
     static let favourites: Self = .init(
         cardName: "secondCard",
-        title: "Save your favorite movies in your app",
-        subtitle: "You can create a selection of your favorite movies!"
+        title: "Second to know",
+        subtitle: "All news in one place, be the first to know last news."
     )
 
     static let genres: Self = .init(
         cardName: "thirdCard",
-        title: "Choose your favorite genres",
-        subtitle: "Do you prefer a certain genre? Choose your favorite and enjoy watching!"
-
+        title: "Third to know",
+        subtitle: "All news in one place, be the first to know last news."
     )
 
     static let all: [Self] = [.about, .favourites, .genres]

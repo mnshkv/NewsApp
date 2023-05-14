@@ -8,19 +8,14 @@ import UIKit
 import SnapKit
 
 class OnBoardingViewController: UIViewController {
-    lazy var pageContainerView: UIView = {
+    private lazy var pageContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
     }()
-
-    lazy var onBoardingView = OnBoardingPageView()
-
-
-    lazy var pageScrollView = UIScrollView()
-    lazy var pageIndicator = InteractivePageIndicator(pages: OnBoardingPage.all.count)
-
-    lazy var pageChangeButton: UIButton = {
+    private lazy var pageScrollView = UIScrollView()
+    private lazy var pageIndicator = InteractivePageIndicator(pages: OnBoardingPage.all.count)
+    private lazy var pageChangeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Next", for: .normal)
         button.backgroundColor = UIColor(named: "purple")
@@ -53,7 +48,6 @@ class OnBoardingViewController: UIViewController {
         setupConatraints()
         configurePages(OnBoardingPage.all)
         configureScrollView()
-//        navigationItem.hidesBackButton = true
     }
 
     @objc
@@ -62,10 +56,14 @@ class OnBoardingViewController: UIViewController {
         if page < OnBoardingPage.all.count - 1 {
             setPage(page + 1)
         } else {
-//            let authVC = AuthViewController()
-//            UserDefaults.standard.hasOnboarded = true
-//            print(UserDefaults.standard.hasOnboarded)
-//            navigationController?.pushViewController(authVC, animated: true)
+            print("ready to go")
+            //            let authVC = AuthViewController()
+            //            UserDefaults.standard.hasOnboarded = true
+            //            print(UserDefaults.standard.hasOnboarded)
+            //            navigationController?.pushViewController(authVC, animated: true)
+        }
+        if page == 1 {
+            pageChangeButton.setTitle("Get Started", for: .normal)
         }
     }
 }
@@ -126,7 +124,6 @@ extension OnBoardingViewController {
             make.height.equalTo(56)
             make.bottom.equalToSuperview().inset(50)
         }
-
         pageIndicator.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(376)
             make.centerX.equalToSuperview()
@@ -163,5 +160,3 @@ extension OnBoardingViewController {
         }
     }
 }
-
-
