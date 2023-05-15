@@ -10,16 +10,16 @@ import UIKit
 class TextFieldView: UIView {
     lazy var image: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
-        imageView.tintColor = UIColor(named: "grayLighter")
+        imageView.tintColor = UIColor(named: "grayPrimary")
         return imageView
     }()
 
     lazy var textField: UITextField = {
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(string: "Placeholder Text", attributes: [
-            .foregroundColor: UIColor(named: "grayLighter"),
+            .foregroundColor: UIColor(named: "grayPrimary"),
             .font: UIFont.systemFont(ofSize: 16)
         ])
         textField.textAlignment = .left
@@ -63,8 +63,9 @@ extension TextFieldView {
             make.width.height.equalTo(24)
         }
         textField.snp.makeConstraints { make in
-            make.left.equalTo(image.snp.right).inset(24)
+            make.left.equalTo(image.snp.right).inset(-24)
             make.right.equalToSuperview().inset(24)
+            make.centerY.equalToSuperview()
         }
     }
 }
