@@ -41,6 +41,9 @@
 		8E47A79B2A0DFA77008006F4 /* OnBoardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A79A2A0DFA77008006F4 /* OnBoardingPage.swift */; };
 		8E47A79D2A0DFAD4008006F4 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A79C2A0DFAD4008006F4 /* OnBoardingView.swift */; };
 		8E47A79F2A0DFF00008006F4 /* InteractivePageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A79E2A0DFF00008006F4 /* InteractivePageIndicator.swift */; };
+		8E47A7A22A11EE8F008006F4 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7A12A11EE8F008006F4 /* AuthorizationViewController.swift */; };
+		8E47A7A42A11EEDF008006F4 /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7A32A11EEDF008006F4 /* SignUpButton.swift */; };
+		8E47A7A62A11EF04008006F4 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7A52A11EF04008006F4 /* TextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,9 @@
 		8E47A79A2A0DFA77008006F4 /* OnBoardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPage.swift; sourceTree = "<group>"; };
 		8E47A79C2A0DFAD4008006F4 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		8E47A79E2A0DFF00008006F4 /* InteractivePageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractivePageIndicator.swift; sourceTree = "<group>"; };
+		8E47A7A12A11EE8F008006F4 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		8E47A7A32A11EEDF008006F4 /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
+		8E47A7A52A11EF04008006F4 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 		1713A6192A0BB5770088A9EE /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				8E47A7A02A11EE52008006F4 /* Authorization */,
 				8E47A7962A0DFA36008006F4 /* OnBoarding */,
 				1713A6252A0BD8250088A9EE /* Categories */,
 				1713A6242A0BD81E0088A9EE /* Profile */,
@@ -263,6 +270,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8E47A7A02A11EE52008006F4 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				8E47A7A12A11EE8F008006F4 /* AuthorizationViewController.swift */,
+				8E47A7A72A11F05B008006F4 /* View */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		8E47A7A72A11F05B008006F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E47A7A32A11EEDF008006F4 /* SignUpButton.swift */,
+				8E47A7A52A11EF04008006F4 /* TextFieldView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,6 +377,7 @@
 			files = (
 				1762D9B12A0CE1E500946464 /* BookmarksViewController.swift in Sources */,
 				1713A63C2A0BE8980088A9EE /* NewsService.swift in Sources */,
+				8E47A7A22A11EE8F008006F4 /* AuthorizationViewController.swift in Sources */,
 				1713A6182A0BB52D0088A9EE /* Coordinator.swift in Sources */,
 				8E47A79B2A0DFA77008006F4 /* OnBoardingPage.swift in Sources */,
 				1713A6212A0BD4D50088A9EE /* MainCoordinator.swift in Sources */,
@@ -360,6 +386,7 @@
 				1713A6292A0BD8710088A9EE /* CategoriesViewController.swift in Sources */,
 				1713A6372A0BE69D0088A9EE /* NewsApiResponseDTO.swift in Sources */,
 				1713A6302A0BD8AF0088A9EE /* CategoriesCoordinator.swift in Sources */,
+				8E47A7A62A11EF04008006F4 /* TextFieldView.swift in Sources */,
 				8E47A79D2A0DFAD4008006F4 /* OnBoardingView.swift in Sources */,
 				1713A6232A0BD62A0088A9EE /* BookmarkCoordinator.swift in Sources */,
 				1713A6032A0BB4E10088A9EE /* AppDelegate.swift in Sources */,
@@ -372,6 +399,7 @@
 				1762D9CB2A0D047000946464 /* BookmarkService.swift in Sources */,
 				1713A6342A0BDB920088A9EE /* NetworkService.swift in Sources */,
 				1713A61B2A0BB5970088A9EE /* MainViewController.swift in Sources */,
+				8E47A7A42A11EEDF008006F4 /* SignUpButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
