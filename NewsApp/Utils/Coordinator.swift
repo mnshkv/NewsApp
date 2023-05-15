@@ -30,6 +30,7 @@ extension Coordinator {
 enum Screens {
     case Main
     case Bookmarks
+    case Onboarding
     
     var controller: UIViewController {
         switch self {
@@ -37,6 +38,8 @@ enum Screens {
             return MainViewController()
         case .Bookmarks:
             return BookmarksViewController()
+        case .Onboarding:
+            return OnBoardingViewController()
         }
     }
 }
@@ -48,9 +51,8 @@ class AppCoordinator {
     public let bookmarks = BookmarkCoordinator()
     public let categories = CategoriesCoordinator()
     public let profile = ProfileCoordinator()
-
-    var tabController: UITabBarController = UITabBarController()
     
+    var tabController: UITabBarController = UITabBarController()
     
     func start() {
         tabController.viewControllers = [
@@ -60,5 +62,13 @@ class AppCoordinator {
             profile.navigationController
         ]
         tabController.tabBar.backgroundColor = .systemBackground
+    }
+    
+    private func showFullcoverModal(_ screen: Screens) {
+        main.push(screen)
+    }
+    
+    func showOnBoarding() {
+        showFullcoverModal(.Onboarding)
     }
 }
