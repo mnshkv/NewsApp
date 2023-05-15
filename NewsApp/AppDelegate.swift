@@ -18,7 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        AuthService.shared.anonimAuth()
+//        AuthService.shared.exit()
+//        AuthService.shared.anonimAuth()
+        
+        if let _ = AuthService.shared.uid {
+            return true
+        } else {
+            AppCoordinator.shared.showOnBoarding()
+        }
+        
         return true
     }
 

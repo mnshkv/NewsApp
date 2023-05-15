@@ -31,4 +31,12 @@ class AuthService {
             }
         }
     }
+    
+    public func exit() {
+        try? firebaseAuth.signOut()
+    }
+    
+    public func emailAuth() {
+        
+    }
 }
