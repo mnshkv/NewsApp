@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class RegistrationViewController: UIViewController {
-     private lazy var welcomeLabel: UILabel = {
+    private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.text = "Welcome to NewsToDay"
@@ -51,7 +51,7 @@ class RegistrationViewController: UIViewController {
         return textFieldView
     }()
 
-    private lazy var reapetPasswordTextFieldView: TextFieldView = {
+    private lazy var repeatPasswordTextFieldView: TextFieldView = {
         let textFieldView = TextFieldView()
         textFieldView.image.image = UIImage(named: "passwordImage")
         textFieldView.textField.placeholder = "Reapeat password"
@@ -61,6 +61,7 @@ class RegistrationViewController: UIViewController {
 
     private lazy var loginButton: SignUpButton = {
         let button = SignUpButton(title: "Sign up")
+//        button.isEnabled = false
         button.addTarget(self, action: #selector(openProfileViewController), for: .touchUpInside)
         return button
     }()
@@ -95,7 +96,7 @@ class RegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView() 
+        configureView()
         setupViews()
         setupConstraints()
         configureTapGesture()
@@ -111,7 +112,7 @@ class RegistrationViewController: UIViewController {
         view.addSubview(nameTextFieldView)
         view.addSubview(emailTextFieldView)
         view.addSubview(passwordTextFieldView)
-        view.addSubview(reapetPasswordTextFieldView)
+        view.addSubview(repeatPasswordTextFieldView)
         view.addSubview(loginButton)
         view.addSubview(registrationStackView)
         registrationStackView.addArrangedSubview(registrationLabel)
@@ -119,7 +120,7 @@ class RegistrationViewController: UIViewController {
     }
 
     private func setupConstraints() {
-            welcomeLabel.snp.makeConstraints { make in
+        welcomeLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(72)
             make.left.right.equalTo(20)
         }
@@ -142,13 +143,13 @@ class RegistrationViewController: UIViewController {
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(56)
         }
-        reapetPasswordTextFieldView.snp.makeConstraints { make in
+        repeatPasswordTextFieldView.snp.makeConstraints { make in
             make.top.equalTo(passwordTextFieldView.snp.bottom).inset(-16)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(56)
         }
         loginButton.snp.makeConstraints { make in
-            make.top.equalTo(reapetPasswordTextFieldView.snp.bottom).inset(-16)
+            make.top.equalTo(repeatPasswordTextFieldView.snp.bottom).inset(-16)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(56)
         }
@@ -166,8 +167,33 @@ class RegistrationViewController: UIViewController {
     }
 
     @objc private func openProfileViewController() {
-        let vc = ProfileViewController()
-        show(vc, sender: true)
+
+        loginButton.isEnabled = false
+
+        var passwordText = ""
+        var repeatPasswordText = ""
+
+        if let text = passwordTextFieldView.textField.text {
+            passwordText = text
+        }
+
+        if let text = repeatPasswordTextFieldView.textField.text {
+            repeatPasswordText = text
+        }
+
+        if passwordText == repeatPasswordText {
+            loginButton.isEnabled = true
+            print("Open Profile")
+        }
+
+
+//        if passwordTextFieldView.textField.text ?? "" == repeatPasswordTextFieldView.textField.text ?? "" {
+//            print(passwordTextFieldView.textField.text!)
+//            print(repeatPasswordTextFieldView.textField.text!)
+
+            //        let vc = ProfileViewController()
+            //        show(vc, sender: true)
+//        }
     }
 
     private func configureTapGesture() {

@@ -73,15 +73,27 @@ extension TextFieldView {
 
 extension TextFieldView: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        updateUI()
+        updateTextfieldColor()
         return true
     }
 
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        updateUI()
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text?.isEmpty ?? false {
+            configureEndEditing()
+        }
     }
 
-    func updateUI() {
+    private func configureEndEditing() {
+        returnTextfieldColor()
+    }
+
+    func returnTextfieldColor() {
+        layer.borderColor = nil
+        layer.borderWidth = 0
+        image.tintColor = UIColor(named: "grayPrimary")
+    }
+
+    func updateTextfieldColor() {
         layer.borderColor = UIColor(named: "purple")?.cgColor
         layer.borderWidth = 1
         image.tintColor = UIColor(named: "purple")
