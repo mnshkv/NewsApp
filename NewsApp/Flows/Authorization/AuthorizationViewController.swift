@@ -46,6 +46,7 @@ class AuthorizationViewController: UIViewController {
 
     private lazy var loginButton: SignUpButton = {
         let button = SignUpButton(title: "Sign In")
+        button.addTarget(self, action: #selector(openProfileViewController), for: .touchUpInside)
         return button
     }()
 
@@ -78,16 +79,26 @@ class AuthorizationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        configureView()
         setupViews()
         setupConstraints()
         configureTapGesture()
-        
     }
 
     @objc private func openSignUpViewController() {
         let vc = RegistrationViewController()
-        show(vc, sender: self)
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .coverVertical
+        self.present(vc, animated: true)
+    }
+
+    @objc private func openProfileViewController() {
+        let vc = ProfileViewController()
+        show(vc, sender: true)
+    }
+
+    private func configureView() {
+        view.backgroundColor = .white
     }
 }
 
