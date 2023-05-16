@@ -81,10 +81,13 @@ class AuthorizationViewController: UIViewController {
         view.backgroundColor = .white
         setupViews()
         setupConstraints()
+        configureTapGesture()
+        
     }
 
     @objc private func openSignUpViewController() {
-        print("Open SignUpVC")
+        let vc = RegistrationViewController()
+        show(vc, sender: self)
     }
 }
 
@@ -128,5 +131,10 @@ extension AuthorizationViewController {
             make.centerX.equalToSuperview()
             make.bottom.equalTo(-42)
         }
+    }
+
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
     }
 }

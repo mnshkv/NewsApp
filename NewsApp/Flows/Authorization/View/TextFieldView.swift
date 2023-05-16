@@ -41,6 +41,7 @@ class TextFieldView: UIView {
         addViews()
         createTextFieldView()
         setupConstraints()
+        textField.delegate = self
     }
 }
 
@@ -67,5 +68,22 @@ extension TextFieldView {
             make.right.equalToSuperview().inset(24)
             make.centerY.equalToSuperview()
         }
+    }
+}
+
+extension TextFieldView: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        updateUI()
+        return true
+    }
+
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        updateUI()
+    }
+
+    func updateUI() {
+        layer.borderColor = UIColor(named: "purple")?.cgColor
+        layer.borderWidth = 1
+        image.tintColor = UIColor(named: "purple")
     }
 }

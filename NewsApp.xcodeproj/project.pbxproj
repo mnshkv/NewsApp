@@ -44,6 +44,7 @@
 		8E47A7A22A11EE8F008006F4 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7A12A11EE8F008006F4 /* AuthorizationViewController.swift */; };
 		8E47A7A42A11EEDF008006F4 /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7A32A11EEDF008006F4 /* SignUpButton.swift */; };
 		8E47A7A62A11EF04008006F4 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7A52A11EF04008006F4 /* TextFieldView.swift */; };
+		8E47A7AA2A133EB7008006F4 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7A92A133EB7008006F4 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		8E47A7A12A11EE8F008006F4 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		8E47A7A32A11EEDF008006F4 /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
 		8E47A7A52A11EF04008006F4 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		8E47A7A92A133EB7008006F4 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		1713A6192A0BB5770088A9EE /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				8E47A7A82A133E84008006F4 /* Registration */,
 				8E47A7A02A11EE52008006F4 /* Authorization */,
 				8E47A7962A0DFA36008006F4 /* OnBoarding */,
 				1713A6252A0BD8250088A9EE /* Categories */,
@@ -288,6 +291,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8E47A7A82A133E84008006F4 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				8E47A7A92A133EB7008006F4 /* RegistrationViewController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -379,6 +390,7 @@
 				1713A63C2A0BE8980088A9EE /* NewsService.swift in Sources */,
 				8E47A7A22A11EE8F008006F4 /* AuthorizationViewController.swift in Sources */,
 				1713A6182A0BB52D0088A9EE /* Coordinator.swift in Sources */,
+				8E47A7AA2A133EB7008006F4 /* RegistrationViewController.swift in Sources */,
 				8E47A79B2A0DFA77008006F4 /* OnBoardingPage.swift in Sources */,
 				1713A6212A0BD4D50088A9EE /* MainCoordinator.swift in Sources */,
 				8E47A79F2A0DFF00008006F4 /* InteractivePageIndicator.swift in Sources */,
