@@ -60,7 +60,7 @@ class AuthorizationViewController: UIViewController {
     private lazy var registrationLabel: UILabel = {
         let label = UILabel()
         label.text = "Don't have an account?"
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = UIColor(named: "blackPrimary")
         label.numberOfLines = 1
         return label
@@ -69,7 +69,7 @@ class AuthorizationViewController: UIViewController {
     private lazy var registrationButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(UIColor(named: "blackPrimary"), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.setTitle("Sign Up", for: .normal)
         button.addTarget(self, action: #selector(openSignUpViewController), for: .touchUpInside)
         return button
