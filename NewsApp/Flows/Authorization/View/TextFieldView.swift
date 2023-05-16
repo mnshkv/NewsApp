@@ -26,6 +26,12 @@ class TextFieldView: UIView {
         return textField
     }()
 
+    lazy var hidePasswordButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = UIColor(named: "grayPrimary")
+        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        return button
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,6 +55,7 @@ extension TextFieldView {
     private func addViews() {
         addSubview(image)
         addSubview(textField)
+        addSubview(hidePasswordButton)
     }
 
     private func createTextFieldView() {
@@ -65,8 +72,13 @@ extension TextFieldView {
         }
         textField.snp.makeConstraints { make in
             make.left.equalTo(image.snp.right).inset(-24)
-            make.right.equalToSuperview().inset(24)
+            make.right.equalTo(hidePasswordButton.snp.left).inset(8)
             make.centerY.equalToSuperview()
+        }
+        hidePasswordButton.snp.makeConstraints { make in
+            make.right.equalToSuperview().inset(18)
+            make.centerY.equalToSuperview()
+            make.width.height.equalTo(24)
         }
     }
 }

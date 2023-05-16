@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 class AuthorizationViewController: UIViewController {
+    private var iconClick = true
+    
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -33,6 +35,7 @@ class AuthorizationViewController: UIViewController {
         let textFieldView = TextFieldView()
         textFieldView.image.image = UIImage(named: "emailImage")
         textFieldView.textField.placeholder = "Email Adress"
+        textFieldView.hidePasswordButton.isHidden = true
         return textFieldView
     }()
 
@@ -41,6 +44,7 @@ class AuthorizationViewController: UIViewController {
         textFieldView.image.image = UIImage(named: "passwordImage")
         textFieldView.textField.placeholder = "Password"
         textFieldView.textField.isSecureTextEntry = true
+        textFieldView.hidePasswordButton.addTarget(self, action: #selector(hidePassword), for: .touchUpInside)
         return textFieldView
     }()
 
@@ -99,6 +103,17 @@ class AuthorizationViewController: UIViewController {
 
     private func configureView() {
         view.backgroundColor = .white
+    }
+
+    @objc private func hidePassword() {
+        if iconClick {
+            passwordTextFieldView.textField.isSecureTextEntry = false
+            passwordTextFieldView.hidePasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        } else {
+            passwordTextFieldView.textField.isSecureTextEntry = true
+            passwordTextFieldView.hidePasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        }
+        iconClick = !iconClick
     }
 }
 
