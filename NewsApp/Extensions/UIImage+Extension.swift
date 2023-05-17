@@ -16,4 +16,8 @@ extension UIImage {
     static let thirdCard = UIImage(named: "thirdCard")
     static let eyeImage = UIImage(systemName: "eye")
     static let eyeSlashImage = UIImage(systemName: "eye.slash")
+	static let arrow = UIImage(named: "arrow")
+	static let back = UIImage(named: "back")
+	static let profilePhoto = UIImage(named: "profilePhoto")
+	static let signOut = UIImage(named: "signOut")
 }
