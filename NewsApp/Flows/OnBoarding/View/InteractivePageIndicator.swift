@@ -44,7 +44,7 @@ class InteractivePageIndicator: UIView {
         let fullDotWidth: Float = 24
         let oldWidth = max(oldProgress * fullDotWidth, 8)
         let newWidth = max(delta * fullDotWidth, 8)
-        let disabledColor = UIColor(named: "greyLighter")!
+        let disabledColor = UIColor(named: "grayLighter")!
         let activeColor = UIColor(named: "purple")!
 
         for index in 0..<pages {

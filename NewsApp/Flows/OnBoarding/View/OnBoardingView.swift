@@ -30,7 +30,7 @@ class OnBoardingPageView: UIView {
 
     lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(named: "greyPrimary")
+        label.textColor = UIColor(named: "grayPrimary")
         label.numberOfLines = 2
         label.font = .systemFont(ofSize: 16)
         label.textAlignment = .center
