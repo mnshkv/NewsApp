@@ -31,6 +31,8 @@ enum Screens {
     case Main
     case Bookmarks
     case Onboarding
+    case SelectLangs
+    case Terms
     
     var controller: UIViewController {
         switch self {
@@ -40,6 +42,8 @@ enum Screens {
             return BookmarksViewController()
         case .Onboarding:
             return OnBoardingViewController()
+        default:
+            return MainViewController()
         }
     }
 }
