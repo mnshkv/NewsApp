@@ -20,11 +20,11 @@ class SignUpButton: UIButton {
     }
 
     private func setupButton() {
-        titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        translatesAutoresizingMaskIntoConstraints = false
+        titleLabel?.font = .interSemiBold(16)
         setTitleColor(.white, for: .normal)
         contentMode = .center
-        backgroundColor = UIColor(named: "purple")
+        backgroundColor = .purple
         layer.cornerRadius = 12
-        translatesAutoresizingMaskIntoConstraints = false
     }
 }
