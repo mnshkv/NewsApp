@@ -13,7 +13,6 @@ class BookmarksViewController: UIViewController {
     private let bookmarkService = BookmarkService()
     
     // MARK: - Outlets
-    
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Saved articles to the library"

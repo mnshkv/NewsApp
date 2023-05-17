@@ -9,7 +9,6 @@ import UIKit
 
 class BookmarkTableViewCell: UITableViewCell {
     
-    
     // MARK: - Properties
     
     private let photoImageView: UIImageView = {
