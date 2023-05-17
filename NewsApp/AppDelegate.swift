@@ -19,13 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
 //        AuthService.shared.exit()
-//        AuthService.shared.anonimAuth()
+        AuthService.shared.anonimAuth()
         
-        if let _ = AuthService.shared.uid {
-            return true
-        } else {
-            AppCoordinator.shared.showOnBoarding()
-        }
+//        if let _ = AuthService.shared.uid {
+//            return true
+//        } else {
+//            AppCoordinator.shared.showOnBoarding()
+//        }
         
         return true
     }
