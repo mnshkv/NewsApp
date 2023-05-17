@@ -11,8 +11,11 @@ import UIKit
 class BookmarkCoordinator: Coordinator {
     var navigationController: UINavigationController = UINavigationController()
     
+
     init() {
         let mainVC = BookmarksViewController()
+        mainVC.navigationItem.largeTitleDisplayMode = .always
+        navigationController.navigationBar.prefersLargeTitles = true
         mainVC.navigationItem.title = "Bookmarks"
         navigationController.tabBarItem.image = UIImage(systemName: "bookmark")
         navigationController.pushViewController(mainVC, animated: false)
