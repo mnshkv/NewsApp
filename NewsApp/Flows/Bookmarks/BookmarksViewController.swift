@@ -26,7 +26,7 @@ class BookmarksViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(BookmarkTableViewCell.self, forCellReuseIdentifier: "boommarksCell")
+        tableView.register(BookmarkCell.self, forCellReuseIdentifier: "bookmarkCell")
         tableView.dataSource = self
         return tableView
     } ()
@@ -48,7 +48,7 @@ class BookmarksViewController: UIViewController {
             self.setupLayout()
         }
     }
-
+    
     private func setupHierarchy() {
         if (!bookmarks.isEmpty) {
             view.addSubview(tableView)
@@ -79,8 +79,10 @@ extension BookmarksViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "bookmarkCell", for: indexPath)
+        guard let cell = cell as? BookmarkCell else { return UITableViewCell() }
         let bookmark = bookmarks[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "boommarksCell", for: indexPath) as! BookmarkTableViewCell
         cell.setup(bookmark: bookmark)
         return cell
     }

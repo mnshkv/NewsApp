@@ -1,5 +1,5 @@
 //
-//  BookmarkTableViewCell.swift
+//  BookmarkCell.swift
 //  NewsApp
 //
 //  Created by Келлер Дмитрий on 17.05.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookmarkTableViewCell: UITableViewCell {
+class BookmarkCell: UITableViewCell {
     
     var bookmark: BookmarkDTO?
     
@@ -23,9 +23,9 @@ class BookmarkTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private let nameBookmarkLabel: UILabel = {
+    private let titleBookmarkLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.font = .interMedium(14)
         label.numberOfLines = 1
         label.text = "UI/UX Design"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +34,7 @@ class BookmarkTableViewCell: UITableViewCell {
     
     private let detailLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = .interRegular(16)
         label.numberOfLines = 3
         label.text = "A simple trick for creating color palletes quickly."
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -61,11 +61,12 @@ class BookmarkTableViewCell: UITableViewCell {
     // MARK: - Setup
     private func setupHierarchy() {
         contentView.addSubview(photoImageView)
-        contentView.addSubview(nameBookmarkLabel)
+        contentView.addSubview(titleBookmarkLabel)
         contentView.addSubview(detailLabel)
     }
     
     private func setupLayout() {
+        //photoImageView.image = UIImage(named: bookmark?.article.urlToImage ??  "book")
         photoImageView.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(8)
             make.left.equalTo(contentView).offset(16)
@@ -73,15 +74,15 @@ class BookmarkTableViewCell: UITableViewCell {
             make.width.equalTo(80)
         }
         
-        nameBookmarkLabel.text = bookmark?.article.title
-        nameBookmarkLabel.snp.makeConstraints { make in
+        titleBookmarkLabel.text = bookmark?.article.title
+        titleBookmarkLabel.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(8)
             make.left.equalTo(photoImageView.snp.right).offset(16)
             make.right.equalTo(contentView).offset(-16)
         }
-        
+        detailLabel.text = bookmark?.article.description
         detailLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameBookmarkLabel.snp.bottom).offset(8)
+            make.top.equalTo(titleBookmarkLabel.snp.bottom).offset(8)
             make.left.equalTo(photoImageView.snp.right).offset(16)
             make.right.equalTo(contentView).offset(-16)
             make.bottom.equalTo(contentView).offset(-8)

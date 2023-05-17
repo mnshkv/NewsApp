@@ -19,9 +19,9 @@ class MainViewController: UIViewController {
         newsService.fetchNews { data in
             print("look this \(data.articles.count)")
             
-//            if let uid = AuthService.shared.uid {
-//                BookmarkService().addBookmark(.init(article: data.articles.last!, userId: uid))
-//            }
+            if let uid = AuthService.shared.uid {
+                BookmarkService().addBookmark(.init(article: data.articles.last!, userId: uid))
+            }
         }
     }
 }
