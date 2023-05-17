@@ -45,6 +45,12 @@
 		8E47A7A42A11EEDF008006F4 /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7A32A11EEDF008006F4 /* SignUpButton.swift */; };
 		8E47A7A62A11EF04008006F4 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7A52A11EF04008006F4 /* TextFieldView.swift */; };
 		8E47A7AA2A133EB7008006F4 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7A92A133EB7008006F4 /* RegistrationViewController.swift */; };
+		8E47A7B62A14AD93008006F4 /* Inter-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E47A7B52A14AD8F008006F4 /* Inter-SemiBold.otf */; };
+		8E47A7B72A14AD95008006F4 /* Inter-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E47A7B32A14AD81008006F4 /* Inter-Medium.otf */; };
+		8E47A7B82A14AD97008006F4 /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E47A7B42A14AD88008006F4 /* Inter-Regular.otf */; };
+		8E47A7BA2A14AFD0008006F4 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7B92A14AFD0008006F4 /* UIFont+Extension.swift */; };
+		8E47A7BC2A14AFDD008006F4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7BB2A14AFDD008006F4 /* UIColor+Extension.swift */; };
+		8E47A7BF2A14B1BD008006F4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7BE2A14B1BD008006F4 /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +86,12 @@
 		8E47A7A32A11EEDF008006F4 /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
 		8E47A7A52A11EF04008006F4 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		8E47A7A92A133EB7008006F4 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		8E47A7B32A14AD81008006F4 /* Inter-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.otf"; sourceTree = "<group>"; };
+		8E47A7B42A14AD88008006F4 /* Inter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.otf"; sourceTree = "<group>"; };
+		8E47A7B52A14AD8F008006F4 /* Inter-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.otf"; sourceTree = "<group>"; };
+		8E47A7B92A14AFD0008006F4 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		8E47A7BB2A14AFDD008006F4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		8E47A7BE2A14B1BD008006F4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +132,8 @@
 		1713A6012A0BB4E10088A9EE /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				8E47A7BD2A14B137008006F4 /* Extensions */,
+				8E47A7B22A14AD72008006F4 /* fonts */,
 				1713A6352A0BE6800088A9EE /* DTO */,
 				1713A6312A0BDB090088A9EE /* Service */,
 				1713A6192A0BB5770088A9EE /* Flows */,
@@ -299,6 +313,26 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		8E47A7B22A14AD72008006F4 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8E47A7B52A14AD8F008006F4 /* Inter-SemiBold.otf */,
+				8E47A7B32A14AD81008006F4 /* Inter-Medium.otf */,
+				8E47A7B42A14AD88008006F4 /* Inter-Regular.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		8E47A7BD2A14B137008006F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E47A7BB2A14AFDD008006F4 /* UIColor+Extension.swift */,
+				8E47A7BE2A14B1BD008006F4 /* UIImage+Extension.swift */,
+				8E47A7B92A14AFD0008006F4 /* UIFont+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -373,8 +407,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1713A60F2A0BB4E40088A9EE /* LaunchScreen.storyboard in Resources */,
+				8E47A7B72A14AD95008006F4 /* Inter-Medium.otf in Resources */,
 				1713A60C2A0BB4E40088A9EE /* Assets.xcassets in Resources */,
 				1762D9B22A0CE1E500946464 /* BookmarksViewController.xib in Resources */,
+				8E47A7B82A14AD97008006F4 /* Inter-Regular.otf in Resources */,
+				8E47A7B62A14AD93008006F4 /* Inter-SemiBold.otf in Resources */,
 				1762D9C12A0CE5A000946464 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +429,8 @@
 				1713A6182A0BB52D0088A9EE /* Coordinator.swift in Sources */,
 				8E47A7AA2A133EB7008006F4 /* RegistrationViewController.swift in Sources */,
 				8E47A79B2A0DFA77008006F4 /* OnBoardingPage.swift in Sources */,
+				8E47A7BA2A14AFD0008006F4 /* UIFont+Extension.swift in Sources */,
+				8E47A7BC2A14AFDD008006F4 /* UIColor+Extension.swift in Sources */,
 				1713A6212A0BD4D50088A9EE /* MainCoordinator.swift in Sources */,
 				8E47A79F2A0DFF00008006F4 /* InteractivePageIndicator.swift in Sources */,
 				8E47A7982A0DFA53008006F4 /* OnBoardingViewController.swift in Sources */,
@@ -406,6 +445,7 @@
 				1713A6052A0BB4E10088A9EE /* SceneDelegate.swift in Sources */,
 				1713A6272A0BD8650088A9EE /* ProfileViewController.swift in Sources */,
 				1713A6392A0BE6EA0088A9EE /* ArticleDTO.swift in Sources */,
+				8E47A7BF2A14B1BD008006F4 /* UIImage+Extension.swift in Sources */,
 				1713A62E2A0BD8A20088A9EE /* ProfileCoordinator.swift in Sources */,
 				1762D9C82A0D033800946464 /* AuthService.swift in Sources */,
 				1762D9CB2A0D047000946464 /* BookmarkService.swift in Sources */,

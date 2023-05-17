@@ -9,14 +9,25 @@ import UIKit
 import SnapKit
 
 class AuthorizationViewController: UIViewController {
+
+    struct Spec {
+        static let welcomeLabelText = "Welcome Back 👋"
+        static let greetingLabelText = "I am happy to see you again. You can continue where you left off by logging in"
+        static let emailTextFieldPlaceholder = "Email Adress"
+        static let passwordTextFieldPlaceholder = "Password"
+        static let loginButtonTitle = "Sign In"
+        static let registrationLabelText = "Don't have an account?"
+        static let registrationButtonTitle = "Sign Up"
+    }
+
     private var iconClick = true
     
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.text = "Welcome Back 👋"
-        label.font = UIFont.boldSystemFont(ofSize: 24)
-        label.textColor = UIColor(named: "blackPrimary")
+        label.text = Spec.welcomeLabelText
+        label.font = .interSemiBold(24)
+        label.textColor = .blackPrimary
         label.numberOfLines = 1
         return label
     }()
@@ -25,31 +36,31 @@ class AuthorizationViewController: UIViewController {
         let label = UILabel()
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.text = "I am happy to see you again. You can continue where you left off by logging in"
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.textColor = UIColor(named: "grayPrimary")
+        label.text = Spec.greetingLabelText
+        label.font = .interRegular(16)
+        label.textColor = .grayPrimary
         return label
     }()
 
     private lazy var emailTextFieldView: TextFieldView = {
         let textFieldView = TextFieldView()
-        textFieldView.image.image = UIImage(named: "emailImage")
-        textFieldView.textField.placeholder = "Email Adress"
+        textFieldView.image.image = .emailImage
+        textFieldView.textField.placeholder = Spec.emailTextFieldPlaceholder
         textFieldView.hidePasswordButton.isHidden = true
         return textFieldView
     }()
 
     private lazy var passwordTextFieldView: TextFieldView = {
         let textFieldView = TextFieldView()
-        textFieldView.image.image = UIImage(named: "passwordImage")
-        textFieldView.textField.placeholder = "Password"
+        textFieldView.image.image = .passwordImage
+        textFieldView.textField.placeholder = Spec.passwordTextFieldPlaceholder
         textFieldView.textField.isSecureTextEntry = true
         textFieldView.hidePasswordButton.addTarget(self, action: #selector(hidePassword), for: .touchUpInside)
         return textFieldView
     }()
 
     private lazy var loginButton: SignUpButton = {
-        let button = SignUpButton(title: "Sign In")
+        let button = SignUpButton(title: Spec.loginButtonTitle)
         button.addTarget(self, action: #selector(openProfileViewController), for: .touchUpInside)
         return button
     }()
@@ -64,18 +75,18 @@ class AuthorizationViewController: UIViewController {
 
     private lazy var registrationLabel: UILabel = {
         let label = UILabel()
-        label.text = "Don't have an account?"
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = UIColor(named: "blackPrimary")
+        label.text = Spec.registrationLabelText
+        label.font = .interMedium(16)
+        label.textColor = .blackPrimary
         label.numberOfLines = 1
         return label
     }()
 
     private lazy var registrationButton: UIButton = {
         let button = UIButton()
-        button.setTitleColor(UIColor(named: "blackPrimary"), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.setTitle("Sign Up", for: .normal)
+        button.setTitleColor(.blackPrimary, for: .normal)
+        button.titleLabel?.font = .interSemiBold(16)
+        button.setTitle(Spec.registrationButtonTitle, for: .normal)
         button.addTarget(self, action: #selector(openSignUpViewController), for: .touchUpInside)
         return button
     }()
@@ -108,10 +119,10 @@ class AuthorizationViewController: UIViewController {
     @objc private func hidePassword() {
         if iconClick {
             passwordTextFieldView.textField.isSecureTextEntry = false
-            passwordTextFieldView.hidePasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            passwordTextFieldView.hidePasswordButton.setImage(.eyeImage, for: .normal)
         } else {
             passwordTextFieldView.textField.isSecureTextEntry = true
-            passwordTextFieldView.hidePasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+            passwordTextFieldView.hidePasswordButton.setImage(.eyeSlashImage, for: .normal)
         }
         iconClick = !iconClick
     }

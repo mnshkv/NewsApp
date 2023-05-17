@@ -12,7 +12,7 @@ class TextFieldView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
-        imageView.tintColor = UIColor(named: "grayPrimary")
+        imageView.tintColor = .grayPrimary
         return imageView
     }()
 
@@ -28,8 +28,8 @@ class TextFieldView: UIView {
 
     lazy var hidePasswordButton: UIButton = {
         let button = UIButton()
-        button.tintColor = UIColor(named: "grayPrimary")
-        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        button.tintColor = .grayPrimary
+        button.setImage(.eyeSlashImage, for: .normal)
         return button
     }()
 
@@ -59,7 +59,7 @@ extension TextFieldView {
     }
 
     private func createTextFieldView() {
-        backgroundColor = UIColor(named: "grayLighter")
+        backgroundColor = .grayLighter
         layer.masksToBounds = true
         layer.cornerRadius = 12
     }
@@ -102,12 +102,12 @@ extension TextFieldView: UITextFieldDelegate {
     func returnTextfieldColor() {
         layer.borderColor = nil
         layer.borderWidth = 0
-        image.tintColor = UIColor(named: "grayPrimary")
+        image.tintColor = .grayPrimary
     }
 
     func updateTextfieldColor() {
-        layer.borderColor = UIColor(named: "purple")?.cgColor
+        layer.borderColor = UIColor.purple?.cgColor
         layer.borderWidth = 1
-        image.tintColor = UIColor(named: "purple")
+        image.tintColor = .purple
     }
 }
