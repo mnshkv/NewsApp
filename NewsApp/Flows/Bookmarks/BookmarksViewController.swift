@@ -44,11 +44,15 @@ class BookmarksViewController: UIViewController {
         bookmarkService.fetchBookmarks { bookmarks in
             self.bookmarks = bookmarks
             self.tableView.reloadData()
+            self.setupHierarchy()
+            self.setupLayout()
         }
     }
 
     private func setupHierarchy() {
-        view.addSubview(tableView)
+        if (!bookmarks.isEmpty) {
+            view.addSubview(tableView)
+        }
         view.addSubview(subtitleLabel)
     }
     
@@ -58,11 +62,13 @@ class BookmarksViewController: UIViewController {
             make.leading.equalTo(view.snp.leading).offset(16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(subtitleLabel.snp.bottom).offset(30)
-            make.right.equalTo(view.snp.right)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.left.equalTo(view.snp.left)
+        if (!bookmarks.isEmpty) {
+            tableView.snp.makeConstraints { make in
+                make.top.equalTo(subtitleLabel.snp.bottom).offset(30)
+                make.right.equalTo(view.snp.right)
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+                make.left.equalTo(view.snp.left)
+            }
         }
     }
 }
