@@ -37,6 +37,8 @@
 		1762D9C52A0CEA6300946464 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1762D9C42A0CEA6300946464 /* SDWebImage */; };
 		1762D9C82A0D033800946464 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1762D9C72A0D033800946464 /* AuthService.swift */; };
 		1762D9CB2A0D047000946464 /* BookmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1762D9CA2A0D047000946464 /* BookmarkService.swift */; };
+		17BB27472A14C8E1009008C4 /* ProfileDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB27462A14C8E1009008C4 /* ProfileDTO.swift */; };
+		17BB274A2A14C94A009008C4 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB27492A14C94A009008C4 /* ProfileService.swift */; };
 		8E47A7982A0DFA53008006F4 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A7972A0DFA53008006F4 /* OnBoardingViewController.swift */; };
 		8E47A79B2A0DFA77008006F4 /* OnBoardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A79A2A0DFA77008006F4 /* OnBoardingPage.swift */; };
 		8E47A79D2A0DFAD4008006F4 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47A79C2A0DFAD4008006F4 /* OnBoardingView.swift */; };
@@ -78,6 +80,8 @@
 		1762D9C02A0CE59B00946464 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1762D9C72A0D033800946464 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		1762D9CA2A0D047000946464 /* BookmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkService.swift; sourceTree = "<group>"; };
+		17BB27462A14C8E1009008C4 /* ProfileDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDTO.swift; sourceTree = "<group>"; };
+		17BB27492A14C94A009008C4 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		8E47A7972A0DFA53008006F4 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8E47A79A2A0DFA77008006F4 /* OnBoardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPage.swift; sourceTree = "<group>"; };
 		8E47A79C2A0DFAD4008006F4 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 		1713A6312A0BDB090088A9EE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				17BB27482A14C937009008C4 /* ProfileService */,
 				1762D9C92A0D045C00946464 /* BookmarkService */,
 				1762D9C62A0D032500946464 /* AuthService */,
 				1713A63A2A0BE8890088A9EE /* NewsService */,
@@ -233,6 +238,7 @@
 				1713A6362A0BE69D0088A9EE /* NewsApiResponseDTO.swift */,
 				1713A6382A0BE6EA0088A9EE /* ArticleDTO.swift */,
 				1762D9AD2A0CE13C00946464 /* BookmarkDTO.swift */,
+				17BB27462A14C8E1009008C4 /* ProfileDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -266,6 +272,14 @@
 				1762D9CA2A0D047000946464 /* BookmarkService.swift */,
 			);
 			path = BookmarkService;
+			sourceTree = "<group>";
+		};
+		17BB27482A14C937009008C4 /* ProfileService */ = {
+			isa = PBXGroup;
+			children = (
+				17BB27492A14C94A009008C4 /* ProfileService.swift */,
+			);
+			path = ProfileService;
 			sourceTree = "<group>";
 		};
 		8E47A7962A0DFA36008006F4 /* OnBoarding */ = {
@@ -434,6 +448,7 @@
 				1713A6212A0BD4D50088A9EE /* MainCoordinator.swift in Sources */,
 				8E47A79F2A0DFF00008006F4 /* InteractivePageIndicator.swift in Sources */,
 				8E47A7982A0DFA53008006F4 /* OnBoardingViewController.swift in Sources */,
+				17BB274A2A14C94A009008C4 /* ProfileService.swift in Sources */,
 				1713A6292A0BD8710088A9EE /* CategoriesViewController.swift in Sources */,
 				1713A6372A0BE69D0088A9EE /* NewsApiResponseDTO.swift in Sources */,
 				1713A6302A0BD8AF0088A9EE /* CategoriesCoordinator.swift in Sources */,
@@ -450,6 +465,7 @@
 				1762D9C82A0D033800946464 /* AuthService.swift in Sources */,
 				1762D9CB2A0D047000946464 /* BookmarkService.swift in Sources */,
 				1713A6342A0BDB920088A9EE /* NetworkService.swift in Sources */,
+				17BB27472A14C8E1009008C4 /* ProfileDTO.swift in Sources */,
 				1713A61B2A0BB5970088A9EE /* MainViewController.swift in Sources */,
 				8E47A7A42A11EEDF008006F4 /* SignUpButton.swift in Sources */,
 			);

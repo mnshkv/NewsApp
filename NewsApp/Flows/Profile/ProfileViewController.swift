@@ -6,14 +6,23 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileViewController: UIViewController {
+    
+    let profileService = ProfileService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemBackground
+        
+        profileService.fetchProfile { profile in
+            if let profile = profile {
+                print("APP: look on profile \(profile.name)")
+            }
+        }
     }
     
 

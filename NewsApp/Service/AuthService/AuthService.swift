@@ -13,6 +13,7 @@ class AuthService {
     static let shared = AuthService()
     
     private let firebaseAuth = Auth.auth()
+    private let profileService = ProfileService()
     
     private var _uid: String?
     public var uid: String? {
@@ -20,16 +21,22 @@ class AuthService {
     }
     
     public func anonimAuth() {
-        firebaseAuth.signInAnonymously { authResult, error in
-            if let error = error {
-                print("auth failed: ", error.localizedDescription)
-                return
+        guard let user = firebaseAuth.currentUser else {
+            firebaseAuth.signInAnonymously { authResult, error in
+                if let error = error {
+                    print("auth failed: ", error.localizedDescription)
+                    return
+                }
+                
+                if let authResult = authResult {
+                    self._uid = authResult.user.uid
+                    self.profileService.createProfile()
+                }
             }
-            
-            if let authResult = authResult {
-                self._uid = authResult.user.uid
-            }
+            return
         }
+        
+        self._uid = user.uid
     }
     
     public func exit() {
