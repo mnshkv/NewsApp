@@ -13,12 +13,13 @@ class BookmarkCoordinator: Coordinator {
     
     init() {
         let mainVC = BookmarksViewController()
+        mainVC.navigationItem.largeTitleDisplayMode = .always
+        navigationController.navigationBar.prefersLargeTitles = true
         mainVC.navigationItem.title = "Bookmarks"
         navigationController.tabBarItem.image = UIImage(systemName: "bookmark")
         navigationController.pushViewController(mainVC, animated: false)
     }
     
     func start() {
-        
     }
 }
