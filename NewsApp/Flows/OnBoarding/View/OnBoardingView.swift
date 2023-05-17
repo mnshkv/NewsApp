@@ -12,7 +12,7 @@ class OnBoardingPageView: UIView {
     lazy var pageCards: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "firstCard")
+        imageView.image = .firstCard
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 12
         return imageView
@@ -20,9 +20,9 @@ class OnBoardingPageView: UIView {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(named: "blackPrimary")
+        label.textColor = .blackPrimary
         label.numberOfLines = 1
-        label.font = .boldSystemFont(ofSize: 24)
+        label.font = .interSemiBold(24)
         label.textAlignment = .center
 //        label.setContentHuggingPriority(.required, for: .vertical)
         return label
@@ -30,9 +30,9 @@ class OnBoardingPageView: UIView {
 
     lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(named: "grayPrimary")
+        label.textColor = .grayPrimary
         label.numberOfLines = 2
-        label.font = .systemFont(ofSize: 16)
+        label.font = .interRegular(16)
         label.textAlignment = .center
 //        label.setContentHuggingPriority(.defaultLow, for: .vertical)
         return label

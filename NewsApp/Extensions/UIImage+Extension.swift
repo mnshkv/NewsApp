@@ -11,6 +11,9 @@ extension UIImage {
     static let emailImage = UIImage(named: "emailImage")
     static let passwordImage = UIImage(named: "passwordImage")
     static let personImage = UIImage(named: "personImage")
+    static let firstCard = UIImage(named: "firstCard")
+    static let secondCard = UIImage(named: "secondCard")
+    static let thirdCard = UIImage(named: "thirdCard")
     static let eyeImage = UIImage(systemName: "eye")
     static let eyeSlashImage = UIImage(systemName: "eye.slash")
 }
