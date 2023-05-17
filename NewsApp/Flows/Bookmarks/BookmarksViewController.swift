@@ -11,6 +11,7 @@ import SnapKit
 class BookmarksViewController: UIViewController {
     
     private let bookmarkService = BookmarkService()
+    var bookmarks: [BookmarkDTO] = []
     
     
     // MARK: - Outlets
@@ -41,11 +42,11 @@ class BookmarksViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         bookmarkService.fetchBookmarks { bookmarks in
-            print("APP: ", bookmarks)
+            self.bookmarks = bookmarks
+            self.tableView.reloadData()
         }
-        
-        
     }
+
     private func setupHierarchy() {
         view.addSubview(tableView)
         view.addSubview(subtitleLabel)
@@ -68,12 +69,13 @@ class BookmarksViewController: UIViewController {
 
 extension BookmarksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return bookmarks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "boommarksCell", for: indexPath)
-       
+        let bookmark = bookmarks[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "boommarksCell", for: indexPath) as! BookmarkTableViewCell
+        cell.setup(bookmark: bookmark)
         return cell
     }
 }
