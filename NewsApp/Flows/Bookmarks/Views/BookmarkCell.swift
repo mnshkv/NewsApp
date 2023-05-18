@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
-class BookmarkCell: UITableViewCell {
+final class BookmarkCell: UITableViewCell {
     
     var bookmark: BookmarkDTO?
     
@@ -18,7 +19,6 @@ class BookmarkCell: UITableViewCell {
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = true
-        imageView.image = UIImage(systemName: "book")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -26,8 +26,8 @@ class BookmarkCell: UITableViewCell {
     private let titleBookmarkLabel: UILabel = {
         let label = UILabel()
         label.font = .interMedium(14)
+        label.textColor = .grayPrimary
         label.numberOfLines = 1
-        label.text = "UI/UX Design"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -35,7 +35,8 @@ class BookmarkCell: UITableViewCell {
     private let detailLabel: UILabel = {
         let label = UILabel()
         label.font = .interRegular(16)
-        label.numberOfLines = 3
+        label.textColor = .blackPrimary
+        label.numberOfLines = 0
         label.text = "A simple trick for creating color palletes quickly."
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -54,7 +55,7 @@ class BookmarkCell: UITableViewCell {
     
     public func setup(bookmark: BookmarkDTO) {
         self.bookmark = bookmark
-        photoImageView.image = UIImage(named: bookmark.article.urlToImage ?? "book")
+        photoImageView.sd_setImage(with: URL(string: bookmark.article.urlToImage ?? "book"), completed: nil)
         titleBookmarkLabel.text = bookmark.article.title
         detailLabel.text = bookmark.article.description
         setupHierarchy()

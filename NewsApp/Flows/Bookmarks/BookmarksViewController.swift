@@ -19,7 +19,7 @@ class BookmarksViewController: UIViewController {
         let label = UILabel()
         label.text = "Saved articles to the library"
         label.font = .interMedium(16)
-        label.textColor = UIColor(red: 124/255, green: 130/255, blue: 161/255, alpha: 1)
+        label.textColor = .grayPrimary
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -28,7 +28,7 @@ class BookmarksViewController: UIViewController {
         let label = UILabel()
         label.text = "You haven't saved any articles yet. Start reading and bookmarking them now"
         label.font = .interMedium(16)
-        label.textColor = UIColor(red: 124/255, green: 130/255, blue: 161/255, alpha: 1)
+        label.textColor = .blackPrimary
         label.textAlignment = .center
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,17 +37,17 @@ class BookmarksViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.rowHeight = 100
         tableView.register(BookmarkCell.self, forCellReuseIdentifier: "bookmarkCell")
         tableView.dataSource = self
         return tableView
     } ()
     
     
-    
     // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .systemBackground
         setupHierarchy()
         setupLayout()
         
@@ -84,15 +84,17 @@ class BookmarksViewController: UIViewController {
                 make.left.equalTo(view.snp.left)
             }
         } else {
-            NSLayoutConstraint.activate([
-                infoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                infoLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            ])
+            infoLabel.snp.makeConstraints { make in
+                make.centerX.equalTo(view.snp.centerX)
+                make.centerY.equalTo(view.snp.centerY)
+                make.left.equalTo(view.snp.left).offset(60)
+                make.right.equalTo(view.snp.right).offset(-60)
+            }
         }
     }
 }
 
-extension BookmarksViewController: UITableViewDataSource {
+extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookmarks.count
     }
@@ -104,5 +106,12 @@ extension BookmarksViewController: UITableViewDataSource {
         let bookmark = bookmarks[indexPath.row]
         cell.setup(bookmark: bookmark)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = ArticleViewController()
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewController.bookmark = bookmarks[indexPath.row]
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
