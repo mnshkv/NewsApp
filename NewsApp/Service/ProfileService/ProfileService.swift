@@ -52,7 +52,7 @@ class ProfileService {
         fetchProfile { firebaseProfile in
             guard let _ = firebaseProfile else {
                 do {
-                    let profile = ProfileDTO(userId: uid)
+					let profile = ProfileDTO(userId: uid)
                     let _ = try self.db.collection(self.path).addDocument(from: profile)
                     
                 } catch {
@@ -64,7 +64,7 @@ class ProfileService {
         }
     }
     
-    public func createProfile(name: String, photoUrl: String) {
+	public func createProfile(name: String, photoUrl: String, email: String) {
         guard let uid = AuthService.shared.uid else {
             print("APP: oops uid is empty")
             return
@@ -73,7 +73,7 @@ class ProfileService {
         fetchProfile { firebaseProfile in
             guard let _ = firebaseProfile else {
                 do {
-                    let profile = ProfileDTO(name: name, photoUrl: photoUrl, userId: uid)
+					let profile = ProfileDTO(name: name, email: email, photoUrl: photoUrl, userId: uid)
                     let _ = try self.db.collection(self.path).addDocument(from: profile)
                     
                 } catch {

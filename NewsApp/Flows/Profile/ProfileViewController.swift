@@ -7,10 +7,15 @@
 
 import UIKit
 import SnapKit
+import SDWebImage
 
 class ProfileViewController: UIViewController {
 	
 	let profileService = ProfileService()
+	
+	private var name: String?
+	private var eMail: String?
+	private var photo: UIImageView?
 	
 	private let profileView = ProfileView()
 	private let languageButton = Button(title: "Language", imageName: UIImage.arrow)
@@ -32,9 +37,36 @@ class ProfileViewController: UIViewController {
 		profileService.fetchProfile { profile in
 			if let profile = profile {
 				print("APP: look on profile \(profile.name)")
+				DispatchQueue.main.async {
+					self.name = profile.name
+					self.eMail = profile.email
+					if let url = profile.photoUrl {
+						self.photo?.sd_setImage(with: URL(string: url))
+					}
+					self.profileView.dataSource = self
+				}
+				
 			}
 		}
+	}
+}
 
+// MARK: - ProfileViewDataSource
+
+extension ProfileViewController: ProfileViewDataSource {
+	func getImage() -> UIImage {
+		guard let photo = photo?.image else { return UIImage(systemName: "person.circle")! }
+		return photo
+	}
+	
+	func getEmail() -> String {
+		guard let eMail else { return "e-Mail" }
+		return eMail
+	}
+	
+	func getName() -> String {
+		guard let name else { return "Dev P" }
+		return name
 	}
 }
 

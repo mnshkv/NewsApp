@@ -8,13 +8,27 @@
 import UIKit
 import SnapKit
 
+protocol ProfileViewDataSource: AnyObject {
+	func getName() -> String
+	func getEmail() -> String
+	func getImage() -> UIImage
+}
+
 final class ProfileView: UIView {
+	
+	weak var dataSource: ProfileViewDataSource? {
+		didSet {
+			nameLabel.text = dataSource?.getName()
+			emailLabel.text = dataSource?.getEmail()
+			profilePhoto.image = dataSource?.getImage()
+		}
+	}
 	
 	// MARK: - Views
 	
 	private lazy var profilePhoto: UIImageView = {
 		let imageView = UIImageView()
-		imageView.image = UIImage(named: "profilePhoto")
+		
 		imageView.clipsToBounds = true
 		imageView.layer.cornerRadius = 72 / 2
 		return imageView
@@ -36,6 +50,10 @@ final class ProfileView: UIView {
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	func test(name: String) {
+		nameLabel.text = name
 	}
 }
 

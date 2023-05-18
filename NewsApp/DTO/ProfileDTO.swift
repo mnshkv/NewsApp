@@ -11,12 +11,14 @@ import FirebaseFirestoreSwift
 struct ProfileDTO: Codable {
     @DocumentID var id: String?
     var name: String = "Anonimus"
+	var email: String?
     var photoUrl: String?
     var userId: String
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
+		case email
         case userId
         case photoUrl
     }
