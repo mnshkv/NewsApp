@@ -8,24 +8,24 @@
 import UIKit
 
 class Button: UIButton {
-	convenience init(title: String, imageName: String) {
+	convenience init(title: String, imageName: UIImage?) {
 		self.init()
 		configuration(with: title, imageName)
 	}
 	
-	func configuration(with title: String, _ image: String) {
+	func configuration(with title: String, _ image: UIImage?) {
 		configuration = .filled()
 		configuration?.title = title
 		
 		var container = AttributeContainer()
-		container.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+		container.font = UIFont.interSemiBold(16)
 		
 		configuration?.attributedTitle = AttributedString(title, attributes: container)
-		if let image = UIImage(named: image) {
+		if let image = image {
 			configuration?.image = image
 		}
-		configuration?.baseBackgroundColor = UIColor.grayLighter //(named: "grayLighter")
-		configuration?.baseForegroundColor = UIColor.grayDarker//(named: "grayDarker")
+		configuration?.baseBackgroundColor = UIColor.grayLighter
+		configuration?.baseForegroundColor = UIColor.grayDarker
 		configuration?.background.cornerRadius = 12
 		configuration?.imagePlacement = .trailing
 		contentHorizontalAlignment = .fill
@@ -36,5 +36,4 @@ class Button: UIButton {
 	override var intrinsicContentSize: CGSize {
 		return CGSize(width: UIView.noIntrinsicMetric, height: 56)
 	}
-	
 }

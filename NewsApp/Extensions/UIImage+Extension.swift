@@ -20,4 +20,5 @@ extension UIImage {
 	static let back = UIImage(named: "back")
 	static let profilePhoto = UIImage(named: "profilePhoto")
 	static let signOut = UIImage(named: "signOut")
+	static let check = UIImage(named: "check")
 }
