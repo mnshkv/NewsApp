@@ -48,6 +48,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
 
     private func configureCollectionView() {
         collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: "CategoryCollectionViewCell")
+        collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.reuseId)
         collectionView.collectionViewLayout = createLayout()
     }
 }
@@ -69,11 +70,19 @@ extension CategoriesViewController {
 
            let section = NSCollectionLayoutSection(group: group)
            section.contentInsets = .init(top: spacing, leading: spacing, bottom: spacing, trailing: spacing)
+        section.boundarySupplementaryItems = [supplementaryHeaderItem()]
            section.interGroupSpacing = spacing
 
            let layout = UICollectionViewCompositionalLayout(section: section)
            return layout
        }
+
+    private func supplementaryHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+        .init(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                heightDimension: .estimated(24)),
+              elementKind: UICollectionView.elementKindSectionHeader,
+              alignment: .top)
+    }
 
 }
 
@@ -88,9 +97,8 @@ extension CategoriesViewController: UICollectionViewDataSource {
         return cell
     }
 
-    //создать кастомный header UICollectionReusableView
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
-//        return header
-//    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.reuseId, for: indexPath)
+        return header
+    }
 }
