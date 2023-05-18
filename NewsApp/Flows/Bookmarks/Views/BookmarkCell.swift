@@ -54,6 +54,9 @@ class BookmarkCell: UITableViewCell {
     
     public func setup(bookmark: BookmarkDTO) {
         self.bookmark = bookmark
+        photoImageView.image = UIImage(named: bookmark.article.urlToImage ?? "book")
+        titleBookmarkLabel.text = bookmark.article.title
+        detailLabel.text = bookmark.article.description
         setupHierarchy()
         setupLayout()
     }
@@ -66,7 +69,7 @@ class BookmarkCell: UITableViewCell {
     }
     
     private func setupLayout() {
-        //photoImageView.image = UIImage(named: bookmark?.article.urlToImage ??  "book")
+     
         photoImageView.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(8)
             make.left.equalTo(contentView).offset(16)
@@ -74,13 +77,13 @@ class BookmarkCell: UITableViewCell {
             make.width.equalTo(80)
         }
         
-        titleBookmarkLabel.text = bookmark?.article.title
+       
         titleBookmarkLabel.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(8)
             make.left.equalTo(photoImageView.snp.right).offset(16)
             make.right.equalTo(contentView).offset(-16)
         }
-        detailLabel.text = bookmark?.article.description
+       
         detailLabel.snp.makeConstraints { make in
             make.top.equalTo(titleBookmarkLabel.snp.bottom).offset(8)
             make.left.equalTo(photoImageView.snp.right).offset(16)
